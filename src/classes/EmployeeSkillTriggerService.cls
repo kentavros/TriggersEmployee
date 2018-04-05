@@ -1,6 +1,6 @@
 public with sharing class EmployeeSkillTriggerService {
 
-	public static void getInsertTriggerAfter(List<EmployeeSkill__c> skills) {
+	public static void checkAvailabilityTimeEmployees(List<EmployeeSkill__c> skills) {
 		//Get ids Employees 
 		List<String> ids = EmployeeSkillTriggerService.getIdsEmployee(skills);
 		//Get WrappEmployee with Properties

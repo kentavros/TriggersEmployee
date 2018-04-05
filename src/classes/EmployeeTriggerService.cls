@@ -1,6 +1,6 @@
 public with sharing class EmployeeTriggerService {
 
-	public static void getInsertTriggerBefore(List<Employee__c> employees) {
+	public static void checkDuplicateEmployees(List<Employee__c> employees) {
 		List<String> firstName = new List<String>();
 		List<String> lastName = new List<String>();
 		List<Date> birthday = new List<Date>();

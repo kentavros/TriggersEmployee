@@ -1,12 +1,15 @@
 @isTest
-private class TestEmployeeTrigger {
+private class EmployeeTriggerTest {
 	
-	@isTest static void testInsertTriggerBeforeErr() {
+	@testSetup static void setup() {
 		Employee__c employee1 = new Employee__c(	First_Name__c = 'TestF', Last_Name__c='TestL', 
 				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
 			);
 
 		insert employee1;
+	}
+
+	@isTest static void testInsertTriggerBeforeErr() {
 
 		Employee__c employee2 = new Employee__c(	First_Name__c = 'TestF', Last_Name__c='TestL', 
 				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
@@ -23,11 +26,6 @@ private class TestEmployeeTrigger {
 	}
 	
 	@isTest static void testInsertTriggerBefore() {
-		Employee__c employee1 = new Employee__c(	First_Name__c = 'TestF', Last_Name__c='TestL', 
-				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
-			);
-
-		insert employee1;
 
 		Employee__c employee2 = new Employee__c(	First_Name__c = 'TestFD', Last_Name__c='TestL', 
 				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
@@ -42,11 +40,6 @@ private class TestEmployeeTrigger {
 	}
 	
 	@isTest static void testUpdateTriggerBeforeErr() {
-		Employee__c employee1 = new Employee__c(	First_Name__c = 'TestF', Last_Name__c='TestL', 
-				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
-			);
-
-		insert employee1;
 
 		Employee__c employee2 = new Employee__c(	First_Name__c = 'TestFD', Last_Name__c='TestL', 
 				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
@@ -67,11 +60,6 @@ private class TestEmployeeTrigger {
 	}
 
 	@isTest static void testUpdateTriggerBefore() {
-		Employee__c employee1 = new Employee__c(	First_Name__c = 'TestF', Last_Name__c='TestL', 
-				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
-			);
-
-		insert employee1;
 
 		Employee__c employee2 = new Employee__c(	First_Name__c = 'TestFD', Last_Name__c='TestL', 
 				Birthday__c=system.today(), IT_Department__c='QA', Level__c='Junior', 	Start_Date__c=system.today()
