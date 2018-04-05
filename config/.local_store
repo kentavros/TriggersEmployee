@@ -6,7 +6,7 @@
         "createdById": "0051r000007nKPLAA2",
         "namespacePrefix": null,
         "lastModifiedById": "0051r000007nKPLAA2",
-        "lastModifiedDate": "2018-04-05T12:03:48.000+0000",
+        "lastModifiedDate": "2018-04-05T12:54:38.000+0000",
         "fullName": "EmployeeSkillTriggerHelper",
         "fileName": "unpackaged/classes/EmployeeSkillTriggerHelper.cls",
         "createdByName": "Alexsandr Sh",
@@ -111,6 +111,22 @@
         "lastModifiedDate": "2018-04-04T13:45:28.000Z",
         "manageableState": "unmanaged",
         "type": "ApexTrigger",
+        "mmState": "clean"
+    },
+    "EmployeeSkillTriggerService.cls": {
+        "id": "01p1r000008xvFEAAY",
+        "name": "EmployeeSkillTriggerService",
+        "createdDate": "2018-04-05T12:46:22.000+0000",
+        "createdById": "0051r000007nKPLAA2",
+        "namespacePrefix": null,
+        "lastModifiedById": "0051r000007nKPLAA2",
+        "lastModifiedDate": "2018-04-05T12:51:07.000+0000",
+        "fullName": "EmployeeSkillTriggerService",
+        "fileName": "unpackaged/classes/EmployeeSkillTriggerService.cls",
+        "createdByName": "Alexsandr Sh",
+        "lastModifiedByName": "Alexsandr Sh",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
         "mmState": "clean"
     }
 }
