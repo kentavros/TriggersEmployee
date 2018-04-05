@@ -8,6 +8,7 @@
 		<members>TestEmployeeSkillTrigger</members>
 		<members>TestEmployeeTrigger</members>
 		<members>EmployeeSkillTriggerService</members>
+		<members>EmployeeTriggerService</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
