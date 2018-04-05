@@ -1,0 +1,18 @@
+{
+    "projectName": "TriggerTest",
+    "username": "assh4884@cunning-goat-277018.com",
+    "id": "5b8cc250-365d-11e8-9f06-b3bfa41e69aa",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://cunning-goat-277018-dev-ed.my.salesforce.com",
+    "workspace": "D:\\SF_project",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AuraDefinitionBundle",
+        "StaticResource"
+    ]
+}
