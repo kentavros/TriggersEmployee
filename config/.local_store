@@ -1,14 +1,16 @@
 {
     "EmployeeSkillTriggerHelper.cls": {
-        "createdById": "0051r000007nKPLAA2",
-        "createdByName": "Alexsandr Sh",
-        "createdDate": "2018-04-04T13:46:44.000Z",
-        "fileName": "unpackaged/classes/EmployeeSkillTriggerHelper.cls",
-        "fullName": "EmployeeSkillTriggerHelper",
         "id": "01p1r000008wvuUAAQ",
+        "name": "EmployeeSkillTriggerHelper",
+        "createdDate": "2018-04-04T13:46:44.000+0000",
+        "createdById": "0051r000007nKPLAA2",
+        "namespacePrefix": null,
         "lastModifiedById": "0051r000007nKPLAA2",
+        "lastModifiedDate": "2018-04-05T12:03:48.000+0000",
+        "fullName": "EmployeeSkillTriggerHelper",
+        "fileName": "unpackaged/classes/EmployeeSkillTriggerHelper.cls",
+        "createdByName": "Alexsandr Sh",
         "lastModifiedByName": "Alexsandr Sh",
-        "lastModifiedDate": "2018-04-05T11:21:01.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"

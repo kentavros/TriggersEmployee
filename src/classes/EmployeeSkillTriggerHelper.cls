@@ -1,7 +1,7 @@
 public with sharing class EmployeeSkillTriggerHelper {
 	
 	public static void insertTriggerAfter(List<EmployeeSkill__c> skills) {
-		//Get ids skills 
+		//Get ids Employees 
 		List<String> ids = EmployeeSkillTriggerHelper.getIdsEmployee(skills);
 		//Get WrappEmployee with Properties
 		List<WrappEmployee> wrapEmployees = EmployeeSkillTriggerHelper.getListWrappEmployees(ids);
