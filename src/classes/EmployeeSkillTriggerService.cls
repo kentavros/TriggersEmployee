@@ -7,6 +7,71 @@ public with sharing class EmployeeSkillTriggerService {
 		List<WrappEmployee> wrapEmployees = EmployeeSkillTriggerService.getListWrappEmployees(ids);
 		//Check the time
 		EmployeeSkillTriggerService.timeCheck(wrapEmployees, skills);
+
+		//Sum Project Fields
+		EmployeeSkillTriggerService.sumFieldsProject(skills);
+	}
+
+	public static void recalculateFieldsProject(List<EmployeeSkill__c> skills) {
+		
+		EmployeeSkillTriggerService.sumFieldsProject(skills);
+
+	}
+
+	private static void sumFieldsProject(List<EmployeeSkill__c> skills) {
+		try {
+			List<String> projectIds = EmployeeSkillTriggerService.getProjectIds(skills);
+			List<Project__c> projects = EmployeeSkillTriggerService.getProjects(projectIds);
+			
+			for (Project__c project : projects) {
+				Integer dev = 0;
+				Integer qa = 0;
+				Set<Id> checkEmpId = new Set<Id>();
+				for (EmployeeSkill__c skill : project.EmployeeSkills__r) {
+					if (checkEmpId.add(skill.Employee__c)) {
+						if (skill.Employee__r.isActive__c) {
+							if (skill.Employee__r.IT_Department__c == 'DEV') {
+								dev++;
+							} else if (skill.Employee__r.IT_Department__c == 'QA') {
+								qa++;
+							}
+						}
+					}
+				}
+				project.Developers__c = dev;
+				project.QA_s__c = qa;
+			}
+			update projects;
+
+		} catch (DMLException e) {
+            System.debug('DMLException caught: ' + e.getMessage());
+        } catch(Exception e){
+            System.debug('Exception caught: ' + e.getMessage());
+        }
+	}
+
+
+	private static List<String> getProjectIds(List<EmployeeSkill__c> skills) {
+		List<String> projectIds = new List<String>();
+		for (EmployeeSkill__c skill : skills) {
+			projectIds.add(skill.Project__c);
+		}
+		return projectIds;
+	}
+
+	private static List<Project__c> getProjects(List<String> ids) {
+		List<Project__c> projects = new List<Project__c>();
+		try {
+			projects =[
+				SELECT Id, Developers__c, QA_s__c,
+					(SELECT Name, Employee__c, Employee__r.isActive__c, Employee__r.IT_Department__c 
+					FROM EmployeeSkills__r) 
+				FROM Project__c WHERE Id IN :ids
+			];
+		} catch (QueryException e) {
+		System.debug('QueryException caught: ' + e.getMessage());
+		}	
+		return projects;
 	}
 
 	private static List<String> getIdsEmployee(List<EmployeeSkill__c> skills) {

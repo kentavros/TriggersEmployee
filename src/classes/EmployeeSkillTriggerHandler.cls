@@ -14,6 +14,14 @@ public with sharing class EmployeeSkillTriggerHandler {
         {
             EmployeeSkillTriggerHelper.insertTriggerAfter(Trigger.new);
         }
+        else if(Trigger.isDelete && Trigger.isAfter)
+        {
+            EmployeeSkillTriggerHelper.deleteTriggerAfter(Trigger.old);
+        }
+        // else if(Trigger.isDelete && Trigger.isBefore)
+        // {
+        //     EmployeeSkillTriggerHelper.deleteTriggerBefore(Trigger.old);
+        // }
         //else if(Trigger.isInsert && Trigger.isBefore)
         // {
         //     EmployeeSkillTriggerHelper.insertTriggerBefore(Trigger.new);
@@ -21,14 +29,6 @@ public with sharing class EmployeeSkillTriggerHandler {
         // else if(Trigger.isUpdate && Trigger.isBefore)
         // {
             //EmployeeTriggerHelper.updateTriggerBefore(Trigger.new);
-        // }
-        // else if(Trigger.isDelete && Trigger.isBefore)
-        // {
-
-        // }
-        // else if(Trigger.isDelete && Trigger.isAfter)
-        // {
-
         // }
         // else if(Trigger.isundelete)
         // {

@@ -8,8 +8,14 @@ public with sharing class EmployeeTriggerHelper {
 
 	public static void updateTriggerBefore(List<Employee__c> employees) {
 
-		EmployeeTriggerService.checkDuplicateEmployees(employees);
+		EmployeeTriggerService.checkDuplicateEmployeesActiveAndProjectCount(employees);
+		
+	}
 
+	public static void deleteTriggerBefore(List<Employee__c> employees) {
+
+		EmployeeTriggerService.recalculateFieldsProject(employees);
+		
 	}
 
 }

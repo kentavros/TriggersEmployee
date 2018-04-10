@@ -10,23 +10,23 @@ public class EmployeeTriggerHandler {
         {
             EmployeeTriggerHelper.insertTriggerBefore(Trigger.new);
         }
-        else if(Trigger.isUpdate && Trigger.isBefore)
+        else if(Trigger.isUpdate && Trigger.isAfter)
         {
-            EmployeeTriggerHelper.updateTriggerBefore(Trigger.new);
+            EmployeeTriggerHelper.updateTriggerBefore(Trigger.new);  
         }
+        else if(Trigger.isDelete && Trigger.isBefore)
+        {
+            EmployeeTriggerHelper.deleteTriggerBefore(Trigger.old);
+        }
+        // else if(Trigger.isDelete && Trigger.isAfter)
+        // {
+        //     EmployeeTriggerHelper.deleteTriggerAfter(Trigger.old);
+        // }
         // else if(Trigger.isInsert && Trigger.isAfter)
         // {
 
         // }
         // else if(Trigger.isUpdate && Trigger.isAfter)
-        // {
-
-        // }
-        // else if(Trigger.isDelete && Trigger.isBefore)
-        // {
-
-        // }
-        // else if(Trigger.isDelete && Trigger.isAfter)
         // {
 
         // }
