@@ -6,33 +6,27 @@ public with sharing class EmployeeSkillTriggerHandler {
 
     public void manage() {
         
-        if(Trigger.isInsert && Trigger.isAfter)
-        {
-            EmployeeSkillTriggerHelper.insertTriggerAfter(Trigger.new); 
+        if (Trigger.isBefore) {
+            //DO Some for future
+
+
+        } else if (Trigger.isAfter) {
+            if (Trigger.isInsert) {
+
+                EmployeeSkillTriggerHelper.insertTriggerAfter(Trigger.new); 
+            }
+            else if (Trigger.isUpdate) {
+
+                EmployeeSkillTriggerHelper.insertTriggerAfter(Trigger.new);
+            }
+            else if (Trigger.isDelete) {
+
+                EmployeeSkillTriggerHelper.deleteTriggerAfter(Trigger.old);
+            }
+            else if (Trigger.isundelete) {
+                
+                EmployeeSkillTriggerHelper.undeleteTriggerAfter(Trigger.new);
+            }
         }
-        else if(Trigger.isUpdate && Trigger.isAfter)
-        {
-            EmployeeSkillTriggerHelper.insertTriggerAfter(Trigger.new);
-        }
-        else if(Trigger.isDelete && Trigger.isAfter)
-        {
-            EmployeeSkillTriggerHelper.deleteTriggerAfter(Trigger.old);
-        }
-        // else if(Trigger.isDelete && Trigger.isBefore)
-        // {
-        //     EmployeeSkillTriggerHelper.deleteTriggerBefore(Trigger.old);
-        // }
-        //else if(Trigger.isInsert && Trigger.isBefore)
-        // {
-        //     EmployeeSkillTriggerHelper.insertTriggerBefore(Trigger.new);
-        // }
-        // else if(Trigger.isUpdate && Trigger.isBefore)
-        // {
-            //EmployeeTriggerHelper.updateTriggerBefore(Trigger.new);
-        // }
-        // else if(Trigger.isundelete)
-        // {
-           
-        // }
     }
 }

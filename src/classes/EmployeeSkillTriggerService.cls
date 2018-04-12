@@ -29,7 +29,9 @@ public with sharing class EmployeeSkillTriggerService {
 				Set<Id> checkEmpId = new Set<Id>();
 				for (EmployeeSkill__c skill : project.EmployeeSkills__r) {
 					if (checkEmpId.add(skill.Employee__c)) {
-						if (skill.Employee__r.isActive__c) {
+						if (skill.Employee__r.isActive__c &&
+							(skill.Employee__r.End_Date__c == null || skill.Employee__r.End_Date__c > System.today())) {
+							System.debug(skill.Employee__r.IT_Department__c);
 							if (skill.Employee__r.IT_Department__c == 'DEV') {
 								dev++;
 							} else if (skill.Employee__r.IT_Department__c == 'QA') {
@@ -64,7 +66,8 @@ public with sharing class EmployeeSkillTriggerService {
 		try {
 			projects =[
 				SELECT Id, Developers__c, QA_s__c,
-					(SELECT Name, Employee__c, Employee__r.isActive__c, Employee__r.IT_Department__c 
+					(SELECT Name, Employee__c, Employee__r.isActive__c, 
+					Employee__r.IT_Department__c, Employee__r.End_Date__c   
 					FROM EmployeeSkills__r) 
 				FROM Project__c WHERE Id IN :ids
 			];

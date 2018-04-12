@@ -1,0 +1,6 @@
+<aura:component  controller="MyProjectController">
+ 
+
+<p>From Project Hello!</p>
+
+</aura:component>

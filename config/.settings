@@ -13,6 +13,8 @@
         "ApexPage",
         "ApexTrigger",
         "AuraDefinitionBundle",
+        "StandardValueSet",
+        "StandardValueSetTranslation",
         "StaticResource"
     ]
 }

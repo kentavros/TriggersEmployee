@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable">
+
+<p>Test!!!!</p>
+<c:Projects /> 
+
+</aura:component>

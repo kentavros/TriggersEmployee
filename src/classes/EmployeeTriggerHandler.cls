@@ -6,34 +6,26 @@ public class EmployeeTriggerHandler {
 
     public void manage() {
         
-        if(Trigger.isInsert && Trigger.isBefore)
-        {
-            EmployeeTriggerHelper.insertTriggerBefore(Trigger.new);
-        }
-        else if(Trigger.isUpdate && Trigger.isAfter)
-        {
-            EmployeeTriggerHelper.updateTriggerBefore(Trigger.new);  
-        }
-        else if(Trigger.isDelete && Trigger.isBefore)
-        {
-            EmployeeTriggerHelper.deleteTriggerBefore(Trigger.old);
-        }
-        // else if(Trigger.isDelete && Trigger.isAfter)
-        // {
-        //     EmployeeTriggerHelper.deleteTriggerAfter(Trigger.old);
-        // }
-        // else if(Trigger.isInsert && Trigger.isAfter)
-        // {
+        if (Trigger.isBefore) {
+            if (Trigger.isInsert) {
+                
+                EmployeeTriggerHelper.insertTriggerBefore(Trigger.new);
+            }
+            else if (Trigger.isDelete) {
 
-        // }
-        // else if(Trigger.isUpdate && Trigger.isAfter)
-        // {
+                EmployeeTriggerHelper.deleteTriggerBefore(Trigger.oldMap); 
+            }
+        } else if (Trigger.isAfter) {
+            if (Trigger.isUpdate) {
 
-        // }
-        // else if(Trigger.isundelete)
-        // {
-           
-        // }
+                EmployeeTriggerHelper.updateTriggerAfter(Trigger.new, Trigger.oldMap); 
+
+            } else if (Trigger.isUndelete) {
+
+                EmployeeTriggerHelper.undeleteTrigger(Trigger.new, Trigger.newMap);
+                
+            } 
+        } 
     }
     
 }
